@@ -74,18 +74,43 @@ content:
 
 
 # Settings for the plugins in the _plugins folder.
-_plugins:
-  imager:
-    dir_posts: "assets/images/posts"
-  # To see language support, go to the plugin "_plugins/reading_time.rb"
-  reading_time:
-    locale: en_US
-  # To see language support, go to the plugin "_plugins/datelang.rb"
-  datelang:
-    locale: en_US
-    reload: true
+# _plugins:
+#   imager:
+#     dir_posts: "assets/images/posts"
+#   # To see language support, go to the plugin "_plugins/reading_time.rb"
+#   reading_time:
+#     locale: en_US
+#   # To see language support, go to the plugin "_plugins/datelang.rb"
+#   datelang:
+#     locale: en_US
+#     reload: true
+
+# plugins:
+#   - jektify
+#
+# jektify:
+#   enable: true
+#   open: true
+#    toggle:
+#      using: true
+#    spotify:
+#      user: williamcanin
+#      text: See me no Spotify
+#    sass:
+#      jekyll: true
+#      other:
+#        dir: "way/to/your/SASS"
+#    title:
+#      enable: true
+#      text: "Jektify"
+#    description:
+#      enable: true
+#      text: |
+#        Jekyll plugin to generate html snippets for embedding Spotify Musics.
+#        To listen to the full song, open your Spotify and start these musics.
 
 #  --- SESSION PRIVATE [Do not change anything in the private session unless you know what you are doing.] ---
+
 
 # Settings Default
 include: ['_pages']
@@ -124,6 +149,7 @@ gist:
 
 # Exclude files (or folders) in compilation.
 exclude:
+  - development
   - Gemfile
   - Gemfile.lock
   - screenshot.png
