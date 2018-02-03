@@ -7,18 +7,51 @@ layout: default
 
 <div class="layout_postlist" itemscope="itemscope" itemtype="http://schema.org/Blog">
 
-  {% if site.posts.size > 0 %}
+  <div class="container">
 
-    {% for post in site.posts %}
+    <!-- This is a Blog Title -->
     <div class="row">
-      <h1>{{ post.title }}</h1>
+      <h1 class="layout_postlist__title">{{ page.title }}</h1>
     </div>
 
+    <!-- This is a Blog description -->
     <div class="row">
-      {{ content }}
+      <p class="layout_postlist__description">{{ content }}</p>
     </div>
-    {% endfor %}
 
-  {% endif %}
+  <!-- Loop of posts -->
+    {% if site.posts.size > 0 %}
+
+      {% for post in site.posts %}
+      <div class="layout_postlist__wrap">
+
+        <div class="row">
+          <div class="col-lg-3 offset-lg-0 col-sm-6 text-left">
+            <time class="layout_postlist__time">
+              {% datelang post %}
+              {% include datelang/post %}
+            </time>
+          </div>
+          <div class="col-lg-3 offset-lg-6 col-sm-6 text-right">
+            comments
+          </div>
+        </div>
+
+        <div class="row">
+          <a class="layout_postlist__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </div>
+
+        <div class="row">
+          <p class="layout_postlist__excerpted">{{ post.excerpted | strip_html | truncatewords:26 }}
+            <a href="{{ post.url | prepend: site.baseurl }}">Continue</a>
+          </p>
+        </div>
+
+      </div>
+      {% endfor %}
+
+    {% endif %}
+
+  </div>
 
 </div>

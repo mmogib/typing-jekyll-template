@@ -6,7 +6,24 @@ layout: compress
 <html>
   {% include partials/head.html %}
 <body>
-  {% include partials/sidebar.html %}
-  {{ content }}
+
+
+
+  <div class="layout_default">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3">
+          {% include partials/sidebar.html %}
+        </div>
+
+        <div class="col-lg-9">
+          {{ content }}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

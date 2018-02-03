@@ -74,16 +74,16 @@ content:
 
 
 # Settings for the plugins in the _plugins folder.
-# _plugins:
-#   imager:
-#     dir_posts: "assets/images/posts"
-#   # To see language support, go to the plugin "_plugins/reading_time.rb"
-#   reading_time:
-#     locale: en_US
-#   # To see language support, go to the plugin "_plugins/datelang.rb"
-#   datelang:
-#     locale: en_US
-#     reload: true
+_plugins:
+  imager:
+    dir_posts: "assets/images/posts"
+  # To see language support, go to the plugin "_plugins/reading_time.rb"
+  reading_time:
+    locale: en_US
+  # To see language support, go to the plugin "_plugins/datelang.rb"
+  datelang:
+    locale: en_US
+    reload: true
 
 # plugins:
 #   - jektify
