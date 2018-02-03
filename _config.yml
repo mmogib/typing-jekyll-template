@@ -83,7 +83,7 @@ _plugins:
   # To see language support, go to the plugin "_plugins/datelang.rb"
   datelang:
     locale: en_US
-    reload: true
+    reload: false
 
 # plugins:
 #   - jektify
