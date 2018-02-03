@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: search
 title: Search
 permalink: /blog/search/
 ---

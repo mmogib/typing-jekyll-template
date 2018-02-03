@@ -5,6 +5,8 @@ date:   2018-02-03 10:22:16 -0300
 tags: ['example','welcome','jekyll', 'typing']
 published: true
 comments: true
+# Does not change and does not remove 'script' variables
+script: [post.js]
 excerpted: |
     You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site ...
 ---

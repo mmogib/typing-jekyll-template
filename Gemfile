@@ -14,15 +14,15 @@ gem 'rake'
 gem 'jekyll'
 
 group :jekyll_plugins do
-#    gem 'jekyll-coffeescript'
-#    gem 'jekyll-jsminify'
+  gem 'jekyll-coffeescript'
+  gem 'jekyll-jsminify'
 #    gem 'jekyll-paginate'
-#    gem 'jekyll-gist'
-#    gem 'jekyll-youtube'
+  gem 'jekyll-gist'
+  gem 'jekyll-youtube'
   gem 'bootstrap'
   gem 'jekyll-tagging'
-#    gem 'jemoji'
-#    gem 'jekyll-email-protect'
+  gem 'jemoji'
+  gem 'jekyll-email-protect'
 #    # gem 'jektify'
 end
 

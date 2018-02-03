@@ -128,8 +128,8 @@ sass:
   style: compressed
 
 # Config feed for atom
-# feed:
-#   path: atom.xml
+feed:
+  path: atom.xml
 
 # Config for Compress HTML
 compress_html:
