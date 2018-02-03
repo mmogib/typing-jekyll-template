@@ -22,9 +22,9 @@ layout: default
     {% endfor %}
 
     <div class="row">
-      <form id="layout_search__form" action="" class="form-control layout_search__form">
-        <div class="input-group layout_search__form-group">
-          <input id="layout_search__input" class="form-control layout_search__input" type="text"
+      <form id="layout-search__form" action="" class="form-control layout-search__form">
+        <div class="input-group layout-search__form-group">
+          <input id="layout-search__input" class="form-control layout_search__input" type="text"
           placeholder="
           {{ loadData.website.search.input.placeholder[0] }}
           {{ post_count }}
@@ -35,7 +35,7 @@ layout: default
           '{{ loadData.website.search.input.onblur[0] }}
           {{ post_count }}
           {{ loadData.website.search.input.onblur[1] }}'">
-          <span class="input-group-btn layout_search__input-group">
+          <span class="input-group-btn layout-search__input-group">
             <button id="btn-clean" class="btn btn-primary layout_search__button" type="button">Clean</button>
           </span>
         </div>
@@ -43,8 +43,9 @@ layout: default
     </div>
 
     <div class="row">
-      <ul id="layout_search__results" class="layout_search__results"></ul>
+      <ul id="layout-search__data" class="layout-search__data"></ul>
     </div>
 
   </div>
+
 </div>
