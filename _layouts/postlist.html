@@ -5,20 +5,20 @@ layout: default
 <!-- Include Data Base  -->
 {% include dbase/dbase %}
 
-{% for post in site.posts %}
-  {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
-{% endfor %}
-
 <div class="layout_postlist" itemscope="itemscope" itemtype="http://schema.org/Blog">
 
-  {% for post in site.posts %}
-  <div class="row">
-    <h1>{{ post.title }}</h1>
-  </div>
+  {% if site.posts.size > 0 %}
 
-  <div class="row">
-    {{ content }}
-  </div>
-  {% endfor %}
+    {% for post in site.posts %}
+    <div class="row">
+      <h1>{{ post.title }}</h1>
+    </div>
+
+    <div class="row">
+      {{ content }}
+    </div>
+    {% endfor %}
+
+  {% endif %}
 
 </div>

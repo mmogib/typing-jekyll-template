@@ -13,15 +13,15 @@ gem 'bigdecimal'
 gem 'rake'
 gem 'jekyll'
 group :jekyll_plugins do
-   gem 'jekyll-coffeescript'
-   gem 'jekyll-jsminify'
-   gem 'jekyll-paginate'
-   gem 'jekyll-gist'
-   gem 'jekyll-youtube'
+#    gem 'jekyll-coffeescript'
+#    gem 'jekyll-jsminify'
+#    gem 'jekyll-paginate'
+#    gem 'jekyll-gist'
+#    gem 'jekyll-youtube'
    gem 'jekyll-tagging'
-   gem 'jemoji'
-   gem 'jekyll-email-protect'
-   # gem 'jektify'
+#    gem 'jemoji'
+#    gem 'jekyll-email-protect'
+#    # gem 'jektify'
 end
 
 # END
