@@ -1,26 +1,77 @@
 <div class="container-fluid">
 
-  <div class="row">
+  <div class="sidebar__header">
+    <div class="row">
 
-    <div class="col-3 col-sm-3 col-lg-12">
-      <h1>Avatar</h1>
+      <div class="col-3 col-sm-3 col-lg-12">
+        <a class="sidebar__img" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
+          <img class="img-fluid rounded-circle" src="{{ '/assets/images/avatar' | prepend: site.baseurl }}/typing.svg" alt="Avatar">
+        </a>
+      </div>
+
+      <div class="col-9 col-sm-9 col-lg-12">
+        <a class="sidebar__title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
+          <h1>Hey, I'm Typing.</h1>
+        </a>
+      </div>
+
     </div>
-
-    <div class="col-9 col-sm-9 col-lg-12">
-      <h1>Title</h1>
-    </div>
-
   </div>
 
-  <div class="row">
-    <div class="col-lg-12">
-      Menu
+  <div class="sidebar__menu">
+    <div class="row">
+
+      <ul class="sidebar__menu-list">
+
+        <li class="sidebar__menu-item">
+          <a href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">Hello!</a>
+        </li>
+
+        <hr>
+
+        <li  class="sidebar__menu-item">
+          <a href="{{ '/blog/' | prepend: site.baseurl | prepend: site.url }}">Blog</a>
+          <ul class="sidebar__menu-list--second">
+            <li>
+              <a href="{{ '/blob/search/' | prepend: site.baseurl | prepend: site.url }}">Search</a>
+            </li>
+            <li>
+              <a href="{{ '/blob/tags/' | prepend: site.baseurl | prepend: site.url }}">Tags</a>
+            </li>
+          </ul>
+        </li>
+
+        {% for page in site.pages %}
+          {% if page.title and page.in_menu == true %}
+            <li>
+              <a href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">{{ page.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+      </ul>
+
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-lg-12">
-      Socials
+  <div class="sidebar__socials">
+    <div class="row">
+      <ul>
+      {% for hash in dbase %}
+        {% assign userdata = hash[1] %}
+        {% assign links = userdata.socials.links %}
+
+          <div class="row">
+            {{ userdata.socials.title }}
+          </div>
+          {% for item in links %}
+            <li id="{{ item.id }}">
+              <a class="sidebar__socials-link" title="{{ item.title }}" href="{{ item.url }}"><i class="fa {{ item.icon }} sidebar__socials-icon" aria-hidden="true"></i>{{ item.title }}</a>
+            </li>
+
+          {% endfor %}
+      {% endfor %}
+      </ul>
     </div>
   </div>
 
