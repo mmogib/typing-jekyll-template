@@ -80,7 +80,7 @@ userdata:
   email: youremail@domain.com
   twitter: "@my_twitter"
   disqus:
-    username: "my_user"
+    username: "williamcanin"
   # You can add at most 4 social. If you do not want 4, you can remove the block containing: title, id, icon, url.
   socials:
     title: Follow Me!

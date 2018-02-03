@@ -3,7 +3,7 @@ layout: compress
 ---
 
 <!-- Include Data Base  -->
-{% include dbase/dbase %}
+{% include liquid/data %}
 
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@ layout: compress
 <body>
 
   <div class="layout_default">
-    
+
     <div class="container">
 
       <div class="row">
@@ -32,6 +32,6 @@ layout: compress
   </div>
 
 
-
+  {% include partials/scripts.html %}
 </body>
 </html>

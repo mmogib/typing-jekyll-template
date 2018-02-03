@@ -3,7 +3,7 @@ layout: default
 ---
 
 <!-- Include Data Base  -->
-{% include dbase/dbase %}
+{% include liquid/data %}
 
 <div class="layout_post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -37,7 +37,7 @@ layout: default
     <div class="layout-post__tags">
       <div class="row">
         {% for tag in page.tags %}
-          <a href="{{ '/blog/tags/' | prepend: site.baseurl | prepend: site.url }}/{{ tag }}">{{ tag }}</a>
+          <a class="layout-post__tags-link" href="{{ '/blog/tags/' | prepend: site.baseurl | prepend: site.url }}/{{ tag }}">{{ tag }}</a>
         {% endfor %}
       </div>
     </div>
@@ -97,6 +97,30 @@ layout: default
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis inventore at, accusantium dolores quae ex quibusdam laborum possimus laudantium aliquam ipsum nihil quidem ea consequuntur a dolorem omnis, recusandae quas?</p>
         </div>
       </div>
+    </div>
+
+    <div class="layout_post__disqus">
+      <div class="row">
+        <h2 class="layout_post__disqus-title">Comments</h2>
+      </div>
+      {% if page.comments and loadData.userdata.disqus.username %}
+      <div class="row">
+        <!-- <div class="layout_post__disqus-content"> -->
+          <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname  = 'williamcanin';
+                var disqus_identifier = '{{ page.url }}';
+                var disqus_title      = '{{ page.title }}';
+                var disqus_url        = '{{ site.url }}{{ page.url }}';
+                (function() {
+                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+        <!-- </div> -->
+      </div>
+      {% endif %}
     </div>
 
   </div>

@@ -61,7 +61,7 @@
   <div class="sidebar__socials">
     <div class="row">
       <ul>
-      {% for hash in dbase %}
+      {% for hash in loadData %}
         {% assign userdata = hash[1] %}
         {% assign links = userdata.socials.links %}
 
