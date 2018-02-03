@@ -49,6 +49,10 @@
           {% endif %}
         {% endfor %}
 
+        <li class="sidebar__menu-item">
+          <a href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}" target="_blank">Feed</a>
+        </li>
+
       </ul>
 
     </div>
@@ -66,7 +70,7 @@
           </div>
           {% for item in links %}
             <li id="{{ item.id }}">
-              <a class="sidebar__socials-link" title="{{ item.title }}" href="{{ item.url }}"><i class="fa {{ item.icon }} sidebar__socials-icon" aria-hidden="true"></i>{{ item.title }}</a>
+              <a class="sidebar__socials-link" title="{{ item.title }}" href="{{ item.url }}" target="_blank"><i class="fa {{ item.icon }} sidebar__socials-icon" aria-hidden="true"></i>{{ item.title }}</a>
             </li>
 
           {% endfor %}
