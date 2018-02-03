@@ -15,7 +15,6 @@ website:
   title: Typing
   description: Typing - A Theme for Jekyll
   launch: 2016
-  avatar: typing.svg
   metatag:
     google-site-verification:
     type: "WebSite"
@@ -28,8 +27,21 @@ website:
   google:
     analytics:
       id:  # tracking id, e.g. "UA-000000-01"
+  sidebar:
+    avatar: typing.svg
+  search:
+    input:
+      placeholder: ['Search in','article(s)']
+      onfocus: "Search by: title or tags"
+      onblur: ['Search','article(s)']
+      notfound: "Oh heavens, no results :("
+
   author:
     image: typing.svg
+
+
+
+
   strings:
     sidebar:
       title: |
@@ -59,11 +71,7 @@ website:
         bio: |
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora non aut eos voluptas debitis unde impedit aliquid ipsa.
     search:
-      input:
-        placeholder: ['Search in','article(s)']
-        onfocus: "Search by: title or tags"
-        onblur: ['Search','article(s)']
-        notfound: "Oh heavens, no results :("
+
     share_social:
       title: "Share"
       facebook:

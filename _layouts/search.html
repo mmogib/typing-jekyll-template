@@ -7,12 +7,44 @@ layout: default
 
 <div class="layout_search">
 
-  <div class="row">
-    <h1>{{ page.title }}</h1>
-  </div>
+  <div class="container-fluid">
 
-  <div class="row">
-    {{ content }}
-  </div>
+    <div class="row">
+      <h1>{{ page.title }}</h1>
+    </div>
 
+    <div class="row">
+      {{ content }}
+    </div>
+
+    {% for post in site.categories.blog %}
+      {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
+    {% endfor %}
+
+    <div class="row">
+      <form id="layout_search__form" action="" class="form-control layout_search__form">
+        <div class="input-group layout_search__form-group">
+          <input id="layout_search__input" class="form-control layout_search__input" type="text"
+          placeholder="
+          {{ loadData.website.search.input.placeholder[0] }}
+          {{ post_count }}
+          {{ loadData.website.search.input.placeholder[1] }}"
+          onfocus="this.placeholder =
+          '{{ loadData.website.search.input.onfocus }}'"
+          onblur="this.placeholder =
+          '{{ loadData.website.search.input.onblur[0] }}
+          {{ post_count }}
+          {{ loadData.website.search.input.onblur[1] }}'">
+          <span class="input-group-btn layout_search__input-group">
+            <button id="btn-clean" class="btn btn-primary layout_search__button" type="button">Clean</button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    <div class="row">
+      <ul id="layout_search__results" class="layout_search__results"></ul>
+    </div>
+
+  </div>
 </div>
