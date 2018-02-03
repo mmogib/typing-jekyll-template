@@ -7,12 +7,75 @@ layout: default
 
 <div class="layout_post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <div class="row">
-    <h1>{{ page.title }}</h1>
-  </div>
+  <div class="container-fluid">
 
-  <div class="row">
-    {{ content }}
+    <div class="layout_post__title">
+      <div class="row">
+        <h1>{{ page.title }}</h1>
+      </div>
+    </div>
+
+    <div class="layout_post__date">
+      <div class="row">
+        <div class="col-8 col-lg-3 offset-lg-0 col-sm-6">
+          <div class="row justify-content-start">
+            <time class="layout_post__time">
+              {% datelang page %}{% include datelang/page %}
+            </time>
+          </div>
+        </div>
+        <div class="col-4 col-lg-3 offset-lg-6 col-sm-6">
+          <div class="row justify-content-end">
+            <div class="layout_postlist__comments">
+              comments
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="layout-post__tags">
+      <div class="row">
+        {% for tag in page.tags %}
+          <a href="{{ '/blog/tags/' | prepend: site.baseurl | prepend: site.url }}/{{ tag }}">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="layout-post__reading_time">
+      <div class="row">
+        {{ page.content | reading_time }}
+      </div>
+    </div>
+
+    <div class="layout_post__content">
+      <div class="row">
+        {{ content }}
+      </div>
+    </div>
+
+    <div class="layout_post__share">
+      <div class="row justify-content-center">
+        <h2>Share</h2>
+      </div>
+      <div class="row">
+        <div class="offset-0 offset-sm-2 offset-md-0 offset-lg-2"></div>
+        <div class="text-center col-12 col-sm-2 col-md-3 col-lg-2">
+          Facebook
+        </div>
+        <div class="text-center col-12 col-sm-2 col-md-3 col-lg-2">
+          Twitter
+        </div>
+        <div class="text-center col-12 col-sm-2 col-md-3 col-lg-2">
+          Google Plus
+        </div>
+        <div class="text-center col-12 col-sm-2 col-md-3 col-lg-2">
+          LinkedIn
+        </div>
+        <div class="offset-0 offset-sm-2 offset-md-0 offset-lg-2"></div>
+      </div>
+    </div>
+
   </div>
 
 </div>
