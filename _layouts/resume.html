@@ -7,22 +7,30 @@ layout: default
 
 <div class="p-4 layout_resume">
 
-  <div class="container-fluid">
-
     <div class="layout_resume__header">
-      <div class="row">
-        <div class="col-9">
-          <h1>{{ page.title }}</h1>
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-8 col-lg-3 offset-lg-0 col-sm-6">
+            <div class="row justify-content-start">
+              <h1>{{ page.title }}</h1>
+            </div>
+          </div>
+          <div class="col-4 col-lg-3 offset-lg-6 col-sm-6">
+            <div class="row justify-content-end">
+              <button type="button" name="button" class="btn btn-primary layout_resume__btnprint">Print</button>
+            </div>
+          </div>
         </div>
-        <div class="col-3">
-          <button type="button" name="button" class="btn btn-primary layout_resume__btnprint">Print</button>
-        </div>
+
       </div>
     </div>
 
     <div class="layout_resume__content">
-      <div class="row">
-        <div>{{ content }}</div>
+      <div class="container-fluid">
+        <div class="row">
+          <div>{{ content }}</div>
+        </div>
       </div>
     </div>
 

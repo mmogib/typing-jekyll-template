@@ -5,6 +5,70 @@ layout: default
 <!-- Include Data Base  -->
 {% include liquid/data %}
 
+<div class="p-4 layout_taglist">
+
+    <!-- This is a Blog Title -->
+    <div class="layout_postlist__header">
+      <div class="container-fluid">
+        <div class="row">
+          <h1 class="layout_taglist__title">{{ page.tag }}</h1>
+        </div>
+      </div>
+    </div>
+
+  <!-- Loop of posts -->
+
+      {% for post in page.posts %}
+      <div class="layout_taglist__content">
+
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-8 col-lg-3 offset-lg-0 col-sm-6">
+              <div class="row justify-content-start">
+                <time class="layout_taglist__time">
+                  {% datelang post %}
+                  {% include datelang/post %}
+                </time>
+              </div>
+            </div>
+            <div class="col-4 col-lg-3 offset-lg-6 col-sm-6">
+              <div class="row justify-content-end">
+                <div class="layout_taglist__comments">
+                  comments
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <span class="layout_taglist__tags">{{ post | tags }}</span>
+          </div>
+
+          <div class="row">
+            <a class="layout_taglist__link" href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          </div>
+
+          <div class="row">
+            <p class="layout_postlist__excerpted">{{ post.excerpted | strip_html | truncatewords:26 }}
+              <a href="{{ post.url | prepend: site.baseurl }}">Continue</a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+      {% endfor %}
+
+</div>
+
+
+
+<!-- layout: default
+
+
+
+{% include liquid/data %}
+
 <div class="p-4 layout_tag">
   <div class="container-fluid">
 
@@ -20,4 +84,4 @@ layout: default
   {% endfor %}
 
   </div>
-</div>
+</div> -->
