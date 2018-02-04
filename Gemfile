@@ -23,7 +23,7 @@ group :jekyll_plugins do
   gem 'jekyll-tagging'
   # gem 'jemoji'
   # gem 'jekyll-email-protect'
-  # gem 'jektify'
+  gem 'jektify'
 end
 
 # END

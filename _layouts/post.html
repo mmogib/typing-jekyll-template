@@ -99,18 +99,31 @@ layout: default
       </div>
     </div>
 
+    {% if page.comments != false and loadData.userdata.disqus.username %}
     <div class="layout_post__disqus">
       <div class="row">
         <h2 class="layout_post__disqus-title">Comments</h2>
       </div>
-      {% if loadData.userdata.disqus.username %}
       <div class="layout_post__disqus-content">
-        <div class="row">
-          Disqus
-        </div>
-        {% endif %}
-      </div>
+          <div id="disqus_thread"></div>
+          <script>
+            var disqus_config = function () {
+              this.page.url = '{{ page.url | absolute_url }}';
+              this.page.identifier = '{{ page.url | absolute_url }}';
+            };
 
-  </div>
+            (function() {
+              var d = document, s = d.createElement('script');
+
+              s.src = 'https://{{ loadData.userdata.disqus.username }}.disqus.com/embed.js';
+
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      </div>
+    </div>
+    {% endif %}
 
 </div>
