@@ -71,7 +71,26 @@ content:
     comments:
       enable: true
 
-
+jektify:
+  enable: true
+  open: true
+  toggle:
+    enable: true
+  spotify:
+    user: williamcanin
+    text: See me no Spotify
+  sass:
+    jekyll: true
+    other:
+      dir: "way/to/your/SASS"
+  title:
+    enable: true
+    text: "Jektify"
+  description:
+    enable: true
+    text: |
+      Jekyll plugin to generate html snippets for embedding Spotify Musics.
+      To listen to the full song, open your Spotify and start these musics.
 
 # Settings for the plugins in the _plugins folder.
 _plugins:
@@ -85,31 +104,9 @@ _plugins:
     locale: en_US
     reload: false
 
-# plugins:
-#   - jektify
-#
-# jektify:
-#   enable: true
-#   open: true
-#    toggle:
-#      using: true
-#    spotify:
-#      user: williamcanin
-#      text: See me no Spotify
-#    sass:
-#      jekyll: true
-#      other:
-#        dir: "way/to/your/SASS"
-#    title:
-#      enable: true
-#      text: "Jektify"
-#    description:
-#      enable: true
-#      text: |
-#        Jekyll plugin to generate html snippets for embedding Spotify Musics.
-#        To listen to the full song, open your Spotify and start these musics.
-
 #  --- SESSION PRIVATE [Do not change anything in the private session unless you know what you are doing.] ---
+
+
 
 
 # Settings Default
