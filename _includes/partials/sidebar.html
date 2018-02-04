@@ -1,15 +1,20 @@
+<!-- Include Data Base  -->
+{% include liquid/data %}
+
 <div class="container-fluid">
 
   <div class="sidebar__header">
     <div class="row">
 
+      {% if site.sidebar.avatar.enable == true and loadData.website.sidebar.avatar %}
       <div class="col-3 col-sm-3 col-lg-12">
         <a class="sidebar__img" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
-          <img class="img-fluid rounded-circle" src="{{ '/assets/images/avatar' | prepend: site.baseurl }}/typing.svg" alt="Avatar">
+          <img class="img-fluid rounded-circle" src="{{ '/assets/images/avatar' | prepend: site.baseurl }}/{{ loadData.website.sidebar.avatar }}" alt="Avatar">
         </a>
       </div>
+      {% endif %}
 
-      <div class="col-9 col-sm-9 col-lg-12">
+      <div class="{% if site.sidebar.avatar.enable == true and loadData.website.sidebar.avatar %} col-9 col-sm-9 {% else %} col-12 col-sm-12 {% endif %} col-lg-12">
         <a class="sidebar__title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
           <h1>Hey, I'm Typing.</h1>
         </a>

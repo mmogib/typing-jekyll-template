@@ -49,8 +49,8 @@ layout: default
     </div>
 
     <div class="layout_post__content">
-      <div class="row">
-        <div>{{ content }}</div>
+      <div class="row d-block">
+        {{ content }}
       </div>
     </div>
 
@@ -86,20 +86,27 @@ layout: default
       </div>
     </div>
 
+    {% if site.content.post.author.enable == true and
+      loadData.website.content.post.author.title and
+      loadData.website.content.post.author.name and
+      loadData.website.content.post.author.description %}
     <div class="layout_post__author">
       <div class="row">
-        <div class="col-6 offset-3 col-lg-3 offset-lg-0">
-          <img class="img-fluid rounded-circle" src="{{ '/assets/images/author' | prepend: site.baseurl }}/typing.svg" alt="Author">
+        {% if site.content.post.author.avatar.enable == true and loadData.website.content.post.author.avatar %}
+        <div class="p-0 col-6 offset-3 col-lg-3 offset-lg-0">
+          <img class="img-fluid rounded-circle layout_post__author-img" src="{{ '/assets/images/author' | prepend: site.baseurl }}/typing.svg" alt="Author">
         </div>
-        <div class="col-12 col-lg-9">
-          <p>Author</p>
-          <p>Name</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis inventore at, accusantium dolores quae ex quibusdam laborum possimus laudantium aliquam ipsum nihil quidem ea consequuntur a dolorem omnis, recusandae quas?</p>
+        {% endif %}
+        <div class="col-12 {% if site.content.post.author.avatar.enable == true and loadData.website.content.post.author.avatar %} col-lg-9 {% else %} p-0 col-lg-12 {% endif %}">
+          <p class="layout_post__author-title">{{ loadData.website.content.post.author.title }}</p>
+          <p class="layout_post__author-name">{{ loadData.website.content.post.author.name }}</p>
+          <p class="layout_post__author-description">{{ loadData.website.content.post.author.description }}</p>
         </div>
       </div>
     </div>
+    {% endif %}
 
-    {% if page.comments != false and loadData.userdata.disqus.username %}
+    {% if site.content.post.comments.enable == true and page.comments != false and loadData.userdata.disqus.username %}
     <div class="layout_post__disqus">
       <div class="row">
         <h2 class="layout_post__disqus-title">Comments</h2>

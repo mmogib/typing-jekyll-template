@@ -29,15 +29,20 @@ website:
       id:  # tracking id, e.g. "UA-000000-01"
   sidebar:
     avatar: typing.svg
-  search:
-    input:
-      placeholder: ['Search in','article(s)']
-      onfocus: "Search by: title or tags"
-      onblur: ['Search','article(s)']
-      notfound: "Oh heavens, no results :("
-
-  author:
-    image: typing.svg
+  content:
+    search:
+      input:
+        placeholder: ['Search in','article(s)']
+        onfocus: "Search by: title or tags"
+        onblur: ['Search','article(s)']
+        notfound: "Oh heavens, no results :("
+    post:
+      author:
+        avatar: typing.svg
+        title: Author
+        name: Typing
+        description: |
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis inventore at, accusantium dolores quae ex quibusdam laborum possimus laudantium aliquam ipsum nihil quidem ea consequuntur a dolorem omnis, recusandae quas?
 
 
 
